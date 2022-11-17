@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+      .tab-link {
+        display: inline-block;
+        cursor: pointer;
+      }
+      .tab-link-2 {
+        display: inline-block;
+        cursor: pointer;
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content.on {
+        display: block;
+      }
+      .tab-content-2 {
+        display: none;
+      }
+      .tab-content-2.on {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="tab-link on" data-type="tab-1">첫번째 탭</a>
+    <a class="tab-link" data-type="tab-2">두번째 탭</a>
+    <a class="tab-link" data-type="tab-3">세법째 탭</a>
+
+    <hr />
+
+    <div id="tab-1" class="tab-content on">첫번째 탭 내용</div>
+    <div id="tab-2" class="tab-content">두번째 탭 내용</div>
+    <div id="tab-3" class="tab-content">
+      세번째 탭 내용
+
+      <div>
+        <a class="tab-link-2 on" data-type="tab-3-1">3-1 탭</a>
+        <a class="tab-link-2" data-type="tab-3-2">3-2 탭</a>
+        <a class="tab-link-2" data-type="tab-3-3">3-3 탭</a>
+      </div>
+      <div id="tab-3-1" class="tab-content-2 on">3-1 탭 내용</div>
+      <div id="tab-3-2" class="tab-content-2">3-2 탭 내용</div>
+      <div id="tab-3-3" class="tab-content-2">3-3 탭 내용</div>
+    </div>
+
+    <script>
+      $('.tab-link').click(function () {
+        var tab_id = $(this).attr('data-type');
+        $('.tab-link').removeClass('on');
+        $('.tab-content').removeClass('on');
+        $(this).addClass('on');
+        $('#' + tab_id).addClass('on');
+      });
+
+      $('.tab-link-2').click(function () {
+        var tab_id = $(this).attr('data-type');
+        $('.tab-link-2').removeClass('on');
+        $('.tab-content-2').removeClass('on');
+        $(this).addClass('on');
+        $('#' + tab_id).addClass('on');
+      });
+    </script>
+  </body>
+</html>

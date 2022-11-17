@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>netflix</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="login_box.css" />
+
+    <!-- jquery CDN -->
+    <!-- https://code.jquery.com/ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="login-form-wrapper">
+      <div class="login-form-main">
+        <h1 class="login-page-title">로그인</h1>
+        <form method="post" class="login-form" action="">
+          <div class="login-input login-input-email">
+            <div class="nfInputPlacement">
+              <div class="nfEmailPhoneControls">
+                <input type="text" class="nfTextField" value="" tabindex="1" autocomplete="email" placeholder="이메일 주소 또는 전화번호" />
+              </div>
+            </div>
+          </div>
+
+          <div class="login-input login-input-password">
+            <div class="nfInputPlacement">
+              <div class="nfPasswordControls">
+                <input type="password" class="nfTextField" value="" tabindex="2" autocomplete="password" placeholder="비밀번호" />
+              </div>
+            </div>
+          </div>
+
+          <button class="login-button" type="submit" autocomplete="off" tabindex="3">로그인</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // 로그인 버튼 누를때 redirect 막기
+      $('.login-button').on('click', e => {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>
